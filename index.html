@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Malak Saeed | AI Specialist Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(15, 23, 42, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card .subtitle {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">YOUSSEF MALAK</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="about">
+        <h1>YOUSSEF MALAK SAEED</h1>
+        <h2>AI Specialist & Computer Science Student</h2>
+        <p>
+            Dedicated 3rd-year Artificial Intelligence & Computer Science student at Salhia New University (SGU). 
+            Passionate about applying Machine Learning, Data Analytics, Computer Vision, and Web Technologies to build practical solutions.
+        </p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Bachelor's Degree in AI & Computer Science</h3>
+                <div class="subtitle">Salhia New University (SGU), Egypt | 3rd Year (In Progress)</div>
+                <p>Focusing on Object-Oriented Programming (OOP), Data Structures, Algorithms, Machine Learning, and Software Development.</p>
+            </div>
+            <div class="card">
+                <h3>DEPI – AI & Data Science Track</h3>
+                <div class="subtitle">Digital Egypt Pioneers Initiative</div>
+                <p>Hands-on training covering Machine Learning algorithms, Data Analytics, Deep Learning fundamentals, and real-world projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>AI & Data Science</h3>
+                <div class="skills-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Data Analytics</span>
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Deep Learning</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Programming Languages</h3>
+                <div class="skills-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Web Development</h3>
+                <div class="skills-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="card">
+                ### CS Fundamentals & Tools
+                <div class="skills-tags">
+                    <span class="tag">OOP</span>
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Scope & Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>AI & Data Analytics Pipeline</h3>
+                <div class="subtitle">Python • Machine Learning</div>
+                <p>Building models to analyze datasets, visualize findings, and extract predictive insights using core ML algorithms.</p>
+            </div>
+            <div class="card">
+                <h3>Responsive Web Interfaces</h3>
+                <div class="subtitle">HTML5 • CSS3 • JavaScript</div>
+                <p>Designing modern, interactive, and responsive web applications with clean structure and dynamic user experiences.</p>
+            </div>
+            <div class="card">
+                <h3>OOP Software Systems</h3>
+                <div class="subtitle">Java • Data Structures</div>
+                <p>Developing backend systems utilizing modular Object-Oriented Programming and efficient algorithm design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <p>Feel free to reach out for internship opportunities, project collaborations, or any technical discussions!</p>
+            <div class="contact-info">
+                <div>📍 Location: Egypt</div>
+                <div>📞 Phone: <strong>+20 120 628 2172</strong></div>
+                <div>✉️ Email: <strong>uouou9281@gmail.com</strong></div>
+                <div>🔗 LinkedIn: <a href="https://linkedin.com/in/youssef-malak-350562344" target="_blank">youssef-malak-350562344</a></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Youssef Malak Saeed. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        console.log("Welcome to Youssef Malak's Portfolio Website!");
+    </script>
+</body>
+</html>
